@@ -1,8 +1,10 @@
-body{
+body {
   background-color: #555;
+  font-size: xx-large;
+  text-align: center;
 }
 
-#main-text{
+#main-text {
   color: #999;
 }
 
