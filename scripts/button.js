@@ -15,13 +15,15 @@ let create = (type, id, location) => {
 }
 
 let nmbButton = function () {
-
+  // Create button for player count submittion
   create('button', 'player-count', 'canvas');
   let pcButton = findID('player-count');
   let inputText = findID('text-input');
   pcButton.value = 'submit';
   pcButton.addEventListener('click', () => {
     Game.playerCount = parseInt(findID('text-input').value);
+    pcButton.parentNode.removeChild(pcButton);
+    inputText.value = '';
     if (typeof Game.playerCount !== 'number') {
       mainText.innerHTML = 'Please input a number.'
     } else {
@@ -30,13 +32,18 @@ let nmbButton = function () {
       create('textarea', 'word-1', 'word-1-space');
       create('textarea', 'word-2', 'word-2-space');
       create('textarea', 'word-3', 'word-3-space');
+      findID('word-1').value = '';
+      findID('word-2').value = '';
+      findID('word-3').value = '';
       create('button', 'word-submit', 'canvas');
+      findID('word-submit').value = 'submit';
       // Create Players
       for (let i = 0; i < Game.playerCount; i++) {
         Game.players[i] = new Player();
       }
       // Ask for word input
       for (let player in Game.players) {
+
         mainText.innerHTML = `\nPlayer ${Number(player)+1}, enter a single word ${i + 1}:\n`;
         wordInput = capitalize(wordInput);
         Game.wordBank.push(wordInput);
