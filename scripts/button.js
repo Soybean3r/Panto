@@ -47,6 +47,15 @@ let nmbButton = function () {
 
       create('button', 'word-submit', 'canvas');
       findID('word-submit').value = 'submit';
+
+      findID('word-submit').addEventListener('click', () => {
+        for (let i = 0; i < 3; i++) {
+          Game.wordBank.push(findID(`word-${i+1}`).value)
+        }
+        findID('word-1').value = '';
+        findID('word-2').value = '';
+        findID('word-3').value = '';
+      });
       // Create Players
       createPlayers();
     }
