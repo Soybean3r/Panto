@@ -36,12 +36,14 @@ let nmbButton = function () {
       create('textarea', 'word-2', 'word-2-space');
       create('textarea', 'word-3', 'word-3-space');
 
-      findID('word-1').value = '';
       findID('word-1-space').innerHTML = 'Word 1 - ' + findID('word-1-space').innerHTML;
-      findID('word-2-space').value = '';
+      findID('word-1').value = '';
+
       findID('word-2-space').innerHTML = 'Word 2 - ' + findID('word-2-space').innerHTML;
-      findID('word-3-space').value = '';
+      findID('word-2').value = '';
+
       findID('word-3-space').innerHTML = 'Word 3 - ' + findID('word-3-space').innerHTML;
+      findID('word-3').value = '';
 
       create('button', 'word-submit', 'canvas');
       findID('word-submit').value = 'submit';
