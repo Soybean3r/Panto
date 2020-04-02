@@ -24,10 +24,7 @@ let createPlayers = function () {
   // Ask for word input
   for (let player in Game.players) {
 
-    mainText.innerHTML = `\nPlayer ${Number(player)+1}, enter a single word ${i + 1}:\n`;
-    wordInput = capitalize(wordInput);
-    Game.wordBank.push(wordInput);
-    Game.players[player].bank.push(wordInput);
+    mainText.innerHTML = `Player ${Number(player)+1}, enter single words for the game.`;
   }
   // Randomize word bank and player
   Game.rando(Game.wordBank);
